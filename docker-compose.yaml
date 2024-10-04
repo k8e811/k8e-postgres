@@ -1,0 +1,10 @@
+---
+services:
+  db:
+    image: ${DOCKER_DB_REGISTRY:-k8e}/${DOCKER_DB_REPO:-k8e-postgres}:${DOCKER_DB_TAG:-17}
+    build:
+      context: .
+      args:
+        DOCKER_REGISTRY: ${DOCKER_REGISTRY:-docker.io}
+        DOCKER_POSTGRES_TAG: ${DOCKER_POSTGRES_TAG:-17}
+
